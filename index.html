@@ -13,41 +13,142 @@
 <body>
     <div id="main">
         <div id="head">
-            <button class="material-icons menu">menu</button>
-            <div class="option-1">
-                <button class="btn material-icons" id="lock">lock_open</button>
-                <button class="btn material-symbols-outlined" id="pan">pan_tool</button>
-                <button class="btn material-symbols-outlined" id="arrow-selector">arrow_selector_tool</button>
-                <button class="btn material-icons" id="rectangle">check_box_outline_blank</button>
-                <button class="btn material-symbols-outlined" id="circle">circle</button>
-                <button class="btn material-icons" id="arrow">arrow_right_alt</button>
-                <button class="btn material-icons" id="line">horizontal_rule</button>
-                <button class="btn material-symbols-outlined" id="pen">edit</button>
-                <button class="btn material-icons" id="text">text_format</button>
-                <button class="btn material-symbols-outlined" id="image">image</button>                
-                <button class="btn material-symbols-outlined" id="image">ink_eraser</button>  
-                <input type="color" id="color-picker">              
+            <button 
+                class="material-icons menu"
+                onclick="toggleMenu()"
+                >menu
+            </button>
+            <div id="option-1">
+                <button 
+                    class="btn material-icons" 
+                    id="lock"
+                    onclick="onActionClick(this)"
+                >
+                lock_open
+                </button>
+                <button 
+                    class="btn material-symbols-outlined" 
+                    id="pan"
+                    onclick="onActionClick(this)"
+                    >
+                    pan_tool
+                </button>
+                <button 
+                    class="btn material-symbols-outlined" 
+                    id="arrow-selector"
+                    onclick="onActionClick(this)"
+                    >
+                    arrow_selector_tool
+                </button>
+                <button 
+                    class="btn material-icons" 
+                    id="rectangle"
+                    onclick="onActionClick(this)"
+                    >
+                    check_box_outline_blank
+                </button>
+                <button 
+                    class="btn material-symbols-outlined" 
+                    id="circle"
+                    onclick="onActionClick(this)"
+                    >
+                    circle
+                </button>
+                <button 
+                    class="btn material-icons" 
+                    id="arrow"
+                    onclick="onActionClick(this)"
+                    >
+                    arrow_right_alt
+                </button>
+                <button 
+                    class="btn material-icons" 
+                    id="line"
+                    onclick="onActionClick(this)"
+                    >
+                    horizontal_rule
+                </button>
+                <button 
+                    class="btn material-symbols-outlined" 
+                    id="freehand"
+                    onclick="onActionClick(this)"
+                    >
+                    edit
+                </button>
+                <button 
+                    class="btn material-icons" 
+                    id="text"
+                    onclick="onActionClick(this)"
+                    >
+                    text_format
+                </button>
+                <button 
+                    class="btn material-symbols-outlined" 
+                    id="image"
+                    onclick="onActionClick(this)"
+                    >
+                    image
+                </button>                
+                <button 
+                    class="btn material-symbols-outlined" 
+                    id="eraser"
+                    onclick="onActionClick(this)"
+                    >
+                    ink_eraser
+                </button>
             </div>
-            <div class="option-2">
+            <div id="option-2">
                 <button class="btn material-symbols-outlined">group</button>
                 <button class="btn material-symbols-outlined">menu_book</button>
             </div>
         </div>
+
         <canvas id="canvas"></canvas>
+
+        <div class="form hide">
+            <label for="strokewidth">Stroke Width</label>
+            <input
+              type="range"
+              id="strokewidth"
+              name="strokewidth"
+              min="2"
+              max="12"
+              oninput="onInput(this)"
+            />
+            <label for="strokestyle">Stroke Color</label>
+            <input
+              type="color"
+              name="strokestyle"
+              id="strokestyle"
+              oninput="onInput(this)"
+            />
+            <button id="btn-form" class="clearCanvas">Clear Canvas</button>
+            <button id="btn-save" class="saveCanvas">Save File</button>
+          </div>
         <div id="foot">
             <div id="zoom">
                 <button class="btn material-icons">add</button>
                 <button class="btn material-icons">remove</button>
             </div>
             <div id="undo-redo">
-                <button class="btn material-icons">undo</button>
-                <button class="btn material-icons">redo</button>
+                <button 
+                    class="btn material-icons"
+                    id="undo"
+                    >
+                    undo
+                </button>
+                <button 
+                    class="btn material-icons"
+                    id="redo"
+                    >
+                    redo
+                </button>
             </div>
         </div>
     </div>
 
-    <script src="index.js"></script>
-    <script src="freehand.js"></script>
-    <script src="line.js"></script>
+    <script src="state.js"></script>
+    <script src="drawings.js"></script>
+    <script src="undo-redo.js"></script>
 </body>
 </html>

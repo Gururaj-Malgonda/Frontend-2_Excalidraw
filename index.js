@@ -6,6 +6,15 @@ canvas.height = window.innerHeight;
 const c = canvas.getContext("2d");
 let penColor = "black";
 
+let options = {
+    isFreehandDrawing: false,
+    isRectangleDrawing: false,
+    isCircleDrawing: false,
+    isLineDrawing: false
+}
+
+
+
 // /* STRAIGHT-LINE DRAWING */
 // let penColor = "black";
 function onMouseDown_line(event){

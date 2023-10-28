@@ -1,11 +1,23 @@
 const line = document.getElementById("line");
-let isLineActive = false;
-line.addEventListener("click", onLineClick);
+// let isLineActive = false;
+line.addEventListener("click", enableLineDrawing);
+
+function enableLineDrawing(){
+    options = {
+        isFreehandDrawing: false,
+        isRectangleDrawing: false,
+        isCircleDrawing: false,
+        isLineDrawing: true
+    }
+    onLineClick();
+}
 
 function onLineClick() {
     line.classList.toggle("active")
-    isLineActive = !isLineActive ;
-    if(isLineActive) {
+    let line = option.isLineDrawing.value;
+    // isLineDrawing = !isLineDrawing ;
+    line != line;
+    if(line) {
         canvas.style.cursor = "crosshair";
         canvas.addEventListener("mousedown", onMouseDown_line); 
         canvas.addEventListener("mouseup", onMouseUp_line);
